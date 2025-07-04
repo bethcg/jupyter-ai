@@ -1,3 +1,4 @@
+jupyterlab-ai-assistant
 jupyter-ai
 pandas
 numpy

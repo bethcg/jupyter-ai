@@ -34,12 +34,15 @@ FROM renku/renkulab-py:3.10-0.24.0
 # e.g. the following installs apt-utils and vim; each pkg on its own line, all lines
 # except for the last end with backslash '\' to continue the RUN line
 #
-# USER root
+
+USER root
+RUN curl -fsSL https://ollama.com/install.sh | sh
+
 # RUN apt-get update && \
 #    apt-get install -y --no-install-recommends \
 #    apt-utils \
 #    vim
-# USER ${NB_USER}
+USER ${NB_USER}
 
 # install the python dependencies
 COPY requirements.txt environment.yml /tmp/

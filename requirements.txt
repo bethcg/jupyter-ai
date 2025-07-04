@@ -1,6 +1,6 @@
 ollama
 jupyterlab-ai-assistant
-jupyter-ai'[all]'
+'jupyter-ai[all]'
 pandas
 numpy
 scipy

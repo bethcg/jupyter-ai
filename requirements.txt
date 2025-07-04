@@ -1,3 +1,4 @@
+gpt4all
 ollama
 jupyterlab-ai-assistant
 jupyter-ai

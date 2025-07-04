@@ -1,4 +1,4 @@
-'jupyter-ai[all]'
+jupyter-ai
 pandas
 numpy
 scipy

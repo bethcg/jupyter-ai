@@ -41,9 +41,6 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 # ollama
 EXPOSE 11434
 
-RUN ollama serve
-RUN ollama pull llama3.1
-
 # RUN apt-get update && \
 #    apt-get install -y --no-install-recommends \
 #    apt-utils \

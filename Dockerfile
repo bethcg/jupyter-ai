@@ -38,6 +38,12 @@ FROM renku/renkulab-py:3.10-0.24.0
 USER root
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
+# ollama
+EXPOSE 11434
+
+RUN ollama serve
+RUN ollama pull llama3.1
+
 # RUN apt-get update && \
 #    apt-get install -y --no-install-recommends \
 #    apt-utils \
@@ -54,7 +60,5 @@ RUN mamba env update -q -f /tmp/environment.yml && \
 
 RUN pip install --no-cache-dir ollama 
 
-# ollama
-EXPOSE 11434
 
 COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv

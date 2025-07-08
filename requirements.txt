@@ -1,3 +1,5 @@
+langchain_mistralai
+langchain_nvidia_ai_endpoints
 langchain_aws
 langchain_ollama
 langchain_openai

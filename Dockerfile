@@ -55,7 +55,4 @@ RUN mamba env update -q -f /tmp/environment.yml && \
     mamba env export -n "root" && \
     rm -rf ${HOME}/.renku/venv
 
-RUN pip install --no-cache-dir ollama 
-
-
 COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv

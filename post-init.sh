@@ -1,4 +1,4 @@
 #!/bin/bash
 
-ollama serve
-ollama pull llama2
+ollama serve &
+ollama pull llama2 &

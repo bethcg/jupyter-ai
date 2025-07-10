@@ -38,6 +38,8 @@ VOLUME ["/doc/", "/usr/share/fonts/external/"]
 # RUN perl ./install-tl --no-interaction
 
 
+FROM renku/renkulab-py:3.10-0.24.0
+
 # ollama
 EXPOSE 11434
 

@@ -32,6 +32,24 @@ RUN mkdir /usr/share/fonts/external/ &&\
 
 VOLUME ["/doc/", "/usr/share/fonts/external/"]
 
+# Install all TeX and LaTeX dependencies
+RUN apt-get update && \
+  apt-get install --yes --no-install-recommends \
+  ca-certificates \
+  git \
+  html2text \
+  inotify-tools \
+  lmodern \
+  make \
+  texlive-extra-utils \
+  texlive-fonts-recommended \
+  texlive-lang-english \
+  texlive-lang-portuguese \
+  texlive-plain-generic \
+  texlive-xetex && \
+  apt-get autoclean && apt-get --purge --yes autoremove && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 # RUN curl -L -o install-tl-unx.tar.gz https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 # RUN zcat < install-tl-unx.tar.gz | tar xf -
 # RUN cd install-tl-2*

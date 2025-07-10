@@ -24,8 +24,17 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 
 RUN add-apt-repository universe
 RUN apt-get update 
-RUN apt-get install texlive-xetex
-RUN apt-get install -y pandoc
+FROM thomasweise/docker-pandoc
+MAINTAINER Thomas Weise <tweise@ustc.edu.cn>
+
+RUN mkdir /usr/share/fonts/external/ &&\
+    mkdir /doc/
+
+
+VOLUME ["/doc/", "/usr/share/fonts/external/"]
+
+ADD scripts /bin/
+
 # RUN curl -L -o install-tl-unx.tar.gz https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 # RUN zcat < install-tl-unx.tar.gz | tar xf -
 # RUN cd install-tl-2*

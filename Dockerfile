@@ -20,6 +20,7 @@ FROM renku/renkulab-py:3.10-0.24.0
 
 USER root
 RUN curl -fsSL https://ollama.com/install.sh | sh
+RUN apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic
 
 # ollama
 EXPOSE 11434

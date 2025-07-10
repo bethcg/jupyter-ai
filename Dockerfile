@@ -22,6 +22,8 @@ USER root
 RUN curl -fsSL https://ollama.com/install.sh | sh
 #RUN apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic
 
+RUN add-apt-repository universe
+RUN apt-get update 
 RUN apt-get install texlive-xetex
 RUN apt-get install -y pandoc
 # RUN curl -L -o install-tl-unx.tar.gz https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
